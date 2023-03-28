@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Slider } from "@mui/material";
 import "../styling/Sidebar.css";
+import AlgoText from "./AlgoText";
 
 const Sidebar = () => {
   const myState = useSelector((state) => state.updateProps);
@@ -59,7 +60,7 @@ const Sidebar = () => {
         <select
           name="algo"
           id="algo"
-          onChange={(e) => handleAlgorithm(e.target.value)}
+          onChange={(e) => handleAlgorithm(e.target.value, e.target.algoText)}
           disabled={myState.play ? true : false}
         >
           <option value="bubble">Bubble Sort</option>
@@ -70,20 +71,8 @@ const Sidebar = () => {
         </select>
       </div>
 
-      <div className="sidebar__option">
-        <label htmlFor="range">Range: </label>
-        <Slider
-          style={{ width: "180px" }}
-          size="small"
-          defaultValue={70}
-          id="slider"
-          min={10}
-          className="slider"
-          disabled={myState.play ? true : false}
-          max={max}
-          onChange={(e) => handleRange(e.target.value)}
-          valueLabelDisplay="auto"
-        />
+      <div>
+        <AlgoText />
       </div>
 
       <div className="sidebar__option">
@@ -101,6 +90,22 @@ const Sidebar = () => {
           <option value={20}>Super Fast</option>
           <option value={5}>Ultra Fast</option>
         </select>
+      </div>
+
+      <div className="sidebar__option">
+        <label htmlFor="range">Count: </label>
+        <Slider
+          style={{ width: "180px" }}
+          size="small"
+          defaultValue={70}
+          id="slider"
+          min={10}
+          className="slider"
+          disabled={myState.play ? true : false}
+          max={max}
+          onChange={(e) => handleRange(e.target.value)}
+          valueLabelDisplay="auto"
+        />
       </div>
     </div>
   );

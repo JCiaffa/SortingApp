@@ -1,7 +1,25 @@
 .sidebar {
-  width: 280px;
+  width: 340px;
   box-shadow: 5px 0px 10px 1px lightgrey;
   background-color: aliceblue;
+}
+
+.sidebar__code {
+  justify-content: start;
+  text-align: start;
+  padding: 0px, 20px;
+}
+
+.pre {
+  display: flex;
+  justify-content: center;
+}
+
+.code {
+  text-align: left;
+  font-weight: 700;
+  font-size: 65%;
+  padding: 0px;
 }
 
 .sidebar__option {

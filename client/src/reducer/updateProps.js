@@ -13,7 +13,7 @@ const updateProps = (state = initializer, action) => {
     case "UPDATE_RANGE": {
       let arr = [];
       for (let i = 0; i < action.range; i++)
-        arr.push([Math.floor(Math.random() * 100) + 1, i]);
+        arr.push([Math.floor(Math.random() * 200) + 1, i]);
       return { ...state, range: action.range, values: arr };
     }
 
@@ -30,7 +30,10 @@ const updateProps = (state = initializer, action) => {
     }
 
     case "UPDATE_ALGORITHM": {
-      return { ...state, algorithm: action.algorithm };
+      return {
+        ...state,
+        algorithm: action.algorithm,
+      };
     }
 
     case "UPDATE_TIEMOUTS": {
@@ -41,7 +44,7 @@ const updateProps = (state = initializer, action) => {
       let arr = [],
         range = state.range;
       for (let i = 0; i < range; i++) {
-        arr.push([Math.floor(Math.random() * 100) + 1, i]);
+        arr.push([Math.floor(Math.random() * 200) + 1, i]);
       }
       return { ...state, values: arr };
     }
