@@ -71,7 +71,7 @@ function Visuals() {
       <div className="visualizer">
         {myState.algorithm === "quick" && (
           <div className="legend">
-            <div className="legend__lable"></div> Pivot elements
+            <div className="legend__label"></div> Pivot elements
           </div>
         )}
         {

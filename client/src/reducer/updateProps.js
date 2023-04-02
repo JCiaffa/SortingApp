@@ -1,8 +1,8 @@
 const initializer = {
-  algorithm: "bubble",
+  algorithm: "merge",
   color: "#35c6ff",
   speed: 100,
-  range: "70",
+  range: "100",
   play: false,
   values: [],
   timeouts: [],

@@ -63,15 +63,15 @@ const Sidebar = () => {
           onChange={(e) => handleAlgorithm(e.target.value, e.target.algoText)}
           disabled={myState.play ? true : false}
         >
-          <option value="bubble">Bubble Sort</option>
           <option value="merge">Merge Sort</option>
-          <option value="insertion">Insertion Sort</option>
-          <option value="selection">Selection Sort</option>
           <option value="quick">Quick Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
         </select>
       </div>
 
-      <div>
+      <div className="codeInfo">
         <AlgoText />
       </div>
 
@@ -91,13 +91,12 @@ const Sidebar = () => {
           <option value={5}>Ultra Fast</option>
         </select>
       </div>
-
       <div className="sidebar__option">
         <label htmlFor="range">Count: </label>
         <Slider
           style={{ width: "180px" }}
           size="small"
-          defaultValue={70}
+          defaultValue={100}
           id="slider"
           min={10}
           className="slider"
