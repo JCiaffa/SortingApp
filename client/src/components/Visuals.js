@@ -5,7 +5,6 @@ import InsertionSort from "./InsertionSort";
 import QuickSort from "./QuickSort";
 import MergeSort from "./MergeSort";
 import SelectionSort from "./SelectionSort";
-
 import "../styling/Visuals.css";
 
 function Visuals() {
@@ -22,6 +21,7 @@ function Visuals() {
     dispatch({
       type: "CHANGE_VALUES",
     });
+
     dispatch({
       type: "UPDATE_COLOR",
       color: `rgb(53, 198, 255)`,

@@ -2,7 +2,7 @@ const initializer = {
   algorithm: "merge",
   color: "#35c6ff",
   speed: 100,
-  range: "100",
+  range: "60",
   play: false,
   values: [],
   timeouts: [],
@@ -13,7 +13,7 @@ const updateProps = (state = initializer, action) => {
     case "UPDATE_RANGE": {
       let arr = [];
       for (let i = 0; i < action.range; i++)
-        arr.push([Math.floor(Math.random() * 200) + 1, i]);
+        arr.push([Math.floor(Math.random() * 100) + 1, i]);
       return { ...state, range: action.range, values: arr };
     }
 
@@ -36,7 +36,7 @@ const updateProps = (state = initializer, action) => {
       };
     }
 
-    case "UPDATE_TIEMOUTS": {
+    case "UPDATE_TIMEOUTS": {
       return { ...state, timeouts: action._timeouts };
     }
 
@@ -44,7 +44,7 @@ const updateProps = (state = initializer, action) => {
       let arr = [],
         range = state.range;
       for (let i = 0; i < range; i++) {
-        arr.push([Math.floor(Math.random() * 200) + 1, i]);
+        arr.push([Math.floor(Math.random() * 100) + 1, i]);
       }
       return { ...state, values: arr };
     }

@@ -38,13 +38,28 @@ const Sidebar = () => {
   };
 
   const handleWidth = () => {
-    if (window.innerWidth > 1300) setMax(140);
-    else if (window.innerWidth > 1200) setMax(60);
-    else if (window.innerWidth > 1100) setMax(50);
-    else if (window.innerWidth > 900) setMax(45);
-    else if (window.innerWidth > 800) setMax(40);
-    else if (window.innerWidth > 500) setMax(30);
-    else setMax(20);
+    if (window.innerWidth > 1300) {
+      setMax(90);
+      handleRange(90);
+    } else if (window.innerWidth > 1200) {
+      setMax(60);
+      handleRange(60);
+    } else if (window.innerWidth > 1100) {
+      setMax(50);
+      handleRange(50);
+    } else if (window.innerWidth > 900) {
+      setMax(45);
+      handleRange(45);
+    } else if (window.innerWidth > 800) {
+      setMax(40);
+      handleRange(40);
+    } else if (window.innerWidth > 500) {
+      setMax(30);
+      handleRange(30);
+    } else {
+      setMax(20);
+      handleRange(20);
+    }
   };
 
   useEffect(() => {
@@ -96,11 +111,11 @@ const Sidebar = () => {
         <Slider
           style={{ width: "180px" }}
           size="small"
-          defaultValue={100}
+          defaultValue={30}
           id="slider"
           min={10}
           className="slider"
-          disabled={myState.play ? true : false}
+          disabled={myState.play}
           max={max}
           onChange={(e) => handleRange(e.target.value)}
           valueLabelDisplay="auto"
